@@ -3,6 +3,7 @@
 #include <fstream>
 #include <list>
 #include "../grid/grid.hpp"
+#include "../MST-realisations/mst.hpp"
 
 /* прочитать данные из файла в двусвязный список */
 std::list<Cone> Read(const std::string& filename); 
@@ -19,5 +20,8 @@ void writeGrid(
 );
 void WriteClusters(const std::vector<Point>& points,
 				const std::vector<int>& labels, 
-				std::ofstream& fout); 
+				std::ofstream& fout);
 
+void writeMST(const std::vector<Point>& points, const std::vector<Edge>& mst,std::ofstream& fout);
+
+void writeEdgeLengths(const std::vector<Edge>& edges, std::ofstream& fout);

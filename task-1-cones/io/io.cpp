@@ -93,3 +93,25 @@ void WriteClusters(const std::vector<Point>& points,
 		}
 }
 
+void writeMST(
+    const std::vector<Point>& points,
+    const std::vector<Edge>& mst,
+    std::ofstream& fout
+) {
+    for (const Edge& e : mst) {
+        fout << points[e.u].getX() << " "
+             << points[e.u].getY() << " 0\n";
+
+        fout << points[e.v].getX() << " "
+             << points[e.v].getY() << " 0\n\n";
+    }
+}
+
+void writeEdgeLengths(
+    const std::vector<Edge>& edges,
+    std::ofstream& fout
+) {
+    for (const Edge& e : edges) {
+        fout << e.dist << '\n';
+    }
+}
