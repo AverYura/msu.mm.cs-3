@@ -1,6 +1,6 @@
 #include "wave.hpp"
 
-
+/* алгоритм волны с заданным порогом eps */
 
 void Wave::buildAdjacency(const std::vector<Point>& points, double eps) {
 		int n = static_cast<int>(points.size());
