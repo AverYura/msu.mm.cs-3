@@ -13,10 +13,10 @@ class Wave {
 				std::vector<int> labels;
 
 				// порог
-				const double EPS = 0.5;
+				//const double EPS = 0.5;
 		public:
 				/* строим матрицу смежности */
-				void buildAdjacency(const std::vector<Point>& points);
+				void buildAdjacency(const std::vector<Point>& points, double eps);
 				void clusterize();
 				const std::vector<int>& getLabel() const;
 };

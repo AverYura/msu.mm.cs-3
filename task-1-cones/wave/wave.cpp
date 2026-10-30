@@ -2,13 +2,13 @@
 
 
 
-void Wave::buildAdjacency(const std::vector<Point>& points) {
+void Wave::buildAdjacency(const std::vector<Point>& points, double eps) {
 		int n = static_cast<int>(points.size());
 		adjacency.assign(n, std::vector<unsigned char>(n,0));
 
 		for (int i = 0; i < n; i++) {
 				for (int j = i + 1; j< n; j++) {
-						if (distance(points[i], points[j]) <= EPS) {
+						if (distance(points[i], points[j]) <= eps) {
 								adjacency[i][j] = 1;
 								adjacency[j][i] = 1;
 						}
